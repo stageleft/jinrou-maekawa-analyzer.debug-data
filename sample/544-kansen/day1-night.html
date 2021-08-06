@@ -1,0 +1,165 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>汝は人狼なりや？[観戦]</title>
+<link rel="stylesheet" href="./css/game_view.css">
+<link rel="stylesheet" href="./css/game_night.css">
+<meta http-equiv="Refresh" content="15">
+<script type="text/javascript" src="./javascript/output_realtime.js"></script>
+<script type="text/javascript"><!--
+var sentence       = "夜明けまで ";
+var std_time       = (new Date() - new Date(2021,7,6,23,04,40));
+var end_date       = new Date(2021,7,6,23,03,42) * 1 + std_time;
+var diff_seconds   = Math.floor((new Date(2021,7,6,23,03,42) - new Date(2021,7,6,23,00,42)) / 1000);
+var sound_flag     = false;
+var sound_file     = "";
+var countdown_flag = false;
+var alert_distance = 6;
+
+function updateEndDate(value) {
+  end_date = value + std_time;
+}
+//--></script>
+</head>
+<body onload="output_realtime();">
+<table id="game_top" class="login"><tbody><tr>
+<td class="room"><span class="room-name">【モバマス】Alice Re:Code村</span> [544番地]<br><span class="room-comment">～誰でも歓迎！ テンプレ確認オナシャス！ 更新23:00～</span></td>
+<td class="login-link"><a href="game_view.php?room_no=544&amp;auto_reload=15">[更新]</a>
+[自動更新](<a href="game_view.php?room_no=544">手動</a> <a href="game_view.php?room_no=544&amp;auto_reload=15">【15秒】</a> <a href="game_view.php?room_no=544&amp;auto_reload=30">30秒</a> <a href="game_view.php?room_no=544&amp;auto_reload=45">45秒</a> <a href="game_view.php?room_no=544&amp;auto_reload=60">60秒</a> <a href="game_view.php?room_no=544&amp;auto_reload=90">90秒</a> <a href="game_view.php?room_no=544&amp;auto_reload=120">120秒</a>)
+<a href="game_view.php?room_no=544" target="_blank">[別ページ]</a>
+<a href="./">[戻る]</a></td>
+</tr></tbody></table>
+<table class="login"><tbody><tr>
+<td><form method="post" action="login.php?room_no=544">
+<label for="uname">ユーザ名</label><input type="text" id="uname" name="uname" size="20" value="">
+<label for="trip">＃</label><input type="text" id="trip" name="trip" size="15" maxlength="15" value="">
+<label for="login_password">パスワード</label><input type="password" class="login-password" id="login_password" name="password" size="20" value="">
+<input type="hidden" name="login_manually" value="on">
+<input type="submit" value="ログイン">
+</form></td>
+</tr></tbody></table>
+<div class="game-option">ゲームオプション：<img src="./img/room_option/real_time.gif" class="option" alt="リアルタイム制 (昼： 5 分 / 夜： 3 分)" title="リアルタイム制 (昼： 5 分 / 夜： 3 分)">[5：3]<img src="./img/room_option/dummy_boy.gif" class="option" alt="初日の夜は身代わり君" title="初日の夜は身代わり君"><img src="./img/room_option/gm_login.gif" class="option" alt="身代わり君は GM" title="身代わり君は GM"><img src="./img/room_option/seal_message.gif" class="option" alt="天啓封印" title="天啓封印"><img src="./img/room_option/limit_last_words.gif" class="option" alt="遺言制限" title="遺言制限"><img src="./img/room_option/auto_open_cast.gif" class="option" alt="自動で霊界の配役を公開する" title="自動で霊界の配役を公開する"><img src="./img/room_option/poison.gif" class="option" alt="埋毒者登場 (20人～)" title="埋毒者登場 (20人～)"><img src="./img/room_option/max17.gif" class="option" alt="最大17人" title="最大17人"></div>
+<table class="time-table"><tbody><tr>
+<td>1 日目<span>(生存者 17 人)</span></td>
+<td class="real-time"><form name="realtime_form">
+<input type="text" name="output_realtime" size="60" readonly="">
+</form></td>
+</tr></tbody></table>
+<div class="system-vote">夜明けまで 時間がありません。投票してください。</div>
+<div class="player"><table><tbody><tr>
+<td><img src="./user_icon/073.jpg" style="border-color: #FF6666;" alt="icon" title="※淫夢要素はありません" width="45" height="45"></td>
+<td><font color="#FF6666">◆</font>ゆっくりみく<br>(生存中)</td>
+<td><img src="./user_icon/2997.jpg" style="border-color: #FF0000;" alt="icon" title="" width="45" height="45"></td>
+<td><font color="#FF0000">◆</font>櫻木真乃<br>(生存中)</td>
+<td><img src="./user_icon/3249.jpg" style="border-color: #3300FF;" alt="icon" title="ぴっちぴちよ～ " width="45" height="45"></td>
+<td><font color="#3300FF">◆</font>わかさぎ姫<br>(生存中)</td>
+<td><img src="./user_icon/3108.png" style="border-color: #993300;" alt="icon" title=" " width="45" height="45"></td>
+<td><font color="#993300">◆</font>夢見りあむ<br>(生存中)</td>
+<td><img src="./user_icon/3172.jpg" style="border-color: #FF0000;" alt="icon" title="楽園の素敵な巫女" width="45" height="45"></td>
+<td><font color="#FF0000">◆</font>博麗霊夢<br>(生存中)</td>
+</tr>
+<tr>
+<td><img src="./user_icon/079.jpg" style="border-color: #000000;" alt="icon" title="ははーん。ボクに夢中ですね？" width="45" height="45"></td>
+<td><font color="#000000">◆</font>輿水幸子<br>(生存中)</td>
+<td><img src="./user_icon/736.jpg" style="border-color: #CCFFCC;" alt="icon" title="飴の味は雨あがりの虹のよう。ハリボー、心の一句。まぁグミなんですけど。" width="45" height="45"></td>
+<td><font color="#CCFFCC">◆</font>高垣楓<br>(生存中)</td>
+<td><img src="./user_icon/416.png" style="border-color: #660033;" alt="icon" title="棒に当たった" width="45" height="45"></td>
+<td><font color="#660033">◆</font>シベリアンタヌキ<br>(生存中)</td>
+<td><img src="./user_icon/773.jpg" style="border-color: #0066FF;" alt="icon" title="" width="45" height="45"></td>
+<td><font color="#0066FF">◆</font>橘ありす<br>(生存中)</td>
+<td><img src="./user_icon/3307.png" style="border-color: #000099;" alt="icon" title="無問題。" width="45" height="45"></td>
+<td><font color="#000099">◆</font>チェン<br>(生存中)</td>
+</tr>
+<tr>
+<td><img src="./user_icon/369.gif" style="border-color: #66FF66;" alt="icon" title="できる" width="45" height="45"></td>
+<td><font color="#66FF66">◆</font>できる夫<br>(生存中)</td>
+<td><img src="./user_icon/3006.png" style="border-color: #FFFFFF;" alt="icon" title="にへへ…流行らせコラ…" width="45" height="45"></td>
+<td><font color="#FFFFFF">◆</font>責任甜花<br>(生存中)</td>
+<td><img src="./user_icon/3321.jpg" style="border-color: #000000;" alt="icon" title="焔の錬金術師" width="45" height="45"></td>
+<td><font color="#000000">◆</font>ロイ・マスタング<br>(生存中)</td>
+<td><img src="./user_icon/1025.png" style="border-color: #FF0066;" alt="icon" title="まゆですよぉ" width="45" height="45"></td>
+<td><font color="#FF0066">◆</font>佐久間まゆ<br>(生存中)</td>
+<td><img src="./user_icon/1443.jpg" style="border-color: #FF0000;" alt="icon" title=" " width="45" height="45"></td>
+<td><font color="#FF0000">◆</font>ネロ<br>(生存中)</td>
+</tr>
+<tr>
+<td><img src="./user_icon/3047.png" style="border-color: #0033FF;" alt="icon" title="初心者卒業頑張ります！" width="45" height="45"></td>
+<td><font color="#0033FF">◆</font>メイショウドトウ<br>(生存中)</td>
+<td><img src="./user_icon/3298.png" style="border-color: #FFFF00;" alt="icon" title="" width="45" height="45"></td>
+<td><font color="#FFFF00">◆</font>クルース<br>(生存中)</td>
+</tr></tbody></table></div>
+<table class="talk">
+<tbody><tr>
+<td class="dummy-boy" colspan="2">「◆ゆっくりみく　開始前も言ったけども、終了後に１０人以上希望者いたら<br>２村目建てるでやります。　いじょー」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">あと3分で投票完了されない方は死して地獄へ堕ちてしまいます</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr>
+<td class="dummy-boy" colspan="2">「◆ゆっくりみく　はい、よーいすたーと<br>犬と村と狐の多々買いはぁじまぁるよー<br>最速入力を考慮し、まずは主人公(初日犠牲者)の名前をみくにします<br><br>ＧＭはみんなの夜のアイドル、みくにゃん『◇MIKU.IKbVI』が担当させて頂きます<br><br>占い師や狩人は能力実行画面に切り替わるまでに能力を発動させて下さい<br>(狩人は２日目夜から能力を実行できます)<br>人狼は能力実行時間残り～の画面に【切り替わってから】噛みを行って下さい<br>ただし、ギリギリの時間に噛もうとすると突然死する可能性があるので<br>残り時間1:00までには噛みを行って下さい<br><br>ＧＭ側からの再投票は残り45秒切ったら様子見てやります<br>また、マシントラブル等だと思われる方がいた場合も復帰時間を稼ぐ意味で<br>一回は再投票させて頂きます。人数が多い場合等で悩む気持ちはわかりますが<br>できるだけ早めの投票をお願いします。<br><br>それから、自身の役職の役職の確認、配役の確認は『忘れずに』お願いしますね<br>もし勘違いで不利になったり、負けに繋がることになっても<br>それは自己責任でお願いします<br><br>あと、夜に相談できる役職の方は、仲間の人と入念に相談しておくといいと思います<br><br>それでは各陣営のみなさん頑張って下さいなー！<br><br>【村の宣伝】<br>モバマス村は毎週金～日に村建てをしています<br>村建て時間は２２：３０です<br>金曜は前川鯖　http://alicegame.xsrv.jp/takane/　で建ててます<br>土、日はわかめて鯖　http://jinrou.aa0.netvolante.jp/~jinrou/　で建ててます<br><br>皆様の参加お待ちしてます！<br>モバマス村に来て、人狼しよう！」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr>
+<td class="dummy-boy" colspan="2">「◆ゆっくりみく　開始ギリギリで聞いてごめんね、文字打ったりとかで<br>発言見逃してたから一応念のための確認をしたかった<br>まぁ問題はなさそうなんで気にせずで大丈夫ですー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">出現役職：村人7　占い師1　霊能者1　狩人1　共有者2　人狼3　狂人1　妖狐1</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">ゲーム開始：2021/08/06 (Fri) 23:00:42</td>
+</tr>
+</tbody></table>
+
+</body>

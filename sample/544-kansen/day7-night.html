@@ -1,0 +1,140 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>汝は人狼なりや？[観戦]</title>
+<link rel="stylesheet" href="./css/game_view.css">
+<link rel="stylesheet" href="./css/game_night.css">
+<meta http-equiv="Refresh" content="15">
+<script type="text/javascript" src="./javascript/output_realtime.js"></script>
+<script type="text/javascript"><!--
+var sentence       = "夜明けまで ";
+var std_time       = (new Date() - new Date(2021,7,7,0,13,43));
+var end_date       = new Date(2021,7,7,0,11,42) * 1 + std_time;
+var diff_seconds   = Math.floor((new Date(2021,7,7,0,11,42) - new Date(2021,7,7,0,08,42)) / 1000);
+var sound_flag     = false;
+var sound_file     = "";
+var countdown_flag = false;
+var alert_distance = 6;
+
+function updateEndDate(value) {
+  end_date = value + std_time;
+}
+//--></script>
+</head>
+<body onload="output_realtime();">
+<table id="game_top" class="login"><tbody><tr>
+<td class="room"><span class="room-name">【モバマス】Alice Re:Code村</span> [544番地]<br><span class="room-comment">～誰でも歓迎！ テンプレ確認オナシャス！ 更新23:00～</span></td>
+<td class="login-link"><a href="game_view.php?room_no=544&amp;auto_reload=15">[更新]</a>
+[自動更新](<a href="game_view.php?room_no=544">手動</a> <a href="game_view.php?room_no=544&amp;auto_reload=15">【15秒】</a> <a href="game_view.php?room_no=544&amp;auto_reload=30">30秒</a> <a href="game_view.php?room_no=544&amp;auto_reload=45">45秒</a> <a href="game_view.php?room_no=544&amp;auto_reload=60">60秒</a> <a href="game_view.php?room_no=544&amp;auto_reload=90">90秒</a> <a href="game_view.php?room_no=544&amp;auto_reload=120">120秒</a>)
+<a href="game_view.php?room_no=544" target="_blank">[別ページ]</a>
+<a href="./">[戻る]</a></td>
+</tr></tbody></table>
+<table class="login"><tbody><tr>
+<td><form method="post" action="login.php?room_no=544">
+<label for="uname">ユーザ名</label><input type="text" id="uname" name="uname" size="20" value="">
+<label for="trip">＃</label><input type="text" id="trip" name="trip" size="15" maxlength="15" value="">
+<label for="login_password">パスワード</label><input type="password" class="login-password" id="login_password" name="password" size="20" value="">
+<input type="hidden" name="login_manually" value="on">
+<input type="submit" value="ログイン">
+</form></td>
+</tr></tbody></table>
+<div class="game-option">ゲームオプション：<img src="./img/room_option/real_time.gif" class="option" alt="リアルタイム制 (昼： 5 分 / 夜： 3 分)" title="リアルタイム制 (昼： 5 分 / 夜： 3 分)">[5：3]<img src="./img/room_option/dummy_boy.gif" class="option" alt="初日の夜は身代わり君" title="初日の夜は身代わり君"><img src="./img/room_option/gm_login.gif" class="option" alt="身代わり君は GM" title="身代わり君は GM"><img src="./img/room_option/seal_message.gif" class="option" alt="天啓封印" title="天啓封印"><img src="./img/room_option/limit_last_words.gif" class="option" alt="遺言制限" title="遺言制限"><img src="./img/room_option/auto_open_cast.gif" class="option" alt="自動で霊界の配役を公開する" title="自動で霊界の配役を公開する"><img src="./img/room_option/poison.gif" class="option" alt="埋毒者登場 (20人～)" title="埋毒者登場 (20人～)"><img src="./img/room_option/max17.gif" class="option" alt="最大17人" title="最大17人"></div>
+<table class="time-table"><tbody><tr>
+<td>7 日目<span>(生存者 5 人)</span></td>
+<td class="real-time"><form name="realtime_form">
+<input type="text" name="output_realtime" size="60" readonly="">
+</form></td>
+</tr></tbody></table>
+<div class="system-vote">夜明けまで 時間がありません。投票してください。</div>
+<div class="player"><table><tbody><tr>
+<td><img src="./img/grave.gif" style="border-color: #FF6666;" alt="icon" title="※淫夢要素はありません" onmouseover="this.src='./user_icon/073.jpg'" onmouseout="this.src='./img/grave.gif'" width="45" height="45"></td>
+<td><font color="#FF6666">◆</font>ゆっくりみく<br>(死亡)</td>
+<td><img src="./img/grave.gif" style="border-color: #FF0000;" alt="icon" title="" onmouseover="this.src='./user_icon/2997.jpg'" onmouseout="this.src='./img/grave.gif'" width="45" height="45"></td>
+<td><font color="#FF0000">◆</font>櫻木真乃<br>(死亡)</td>
+<td><img src="./img/grave.gif" style="border-color: #3300FF;" alt="icon" title="ぴっちぴちよ～ " onmouseover="this.src='./user_icon/3249.jpg'" onmouseout="this.src='./img/grave.gif'" width="45" height="45"></td>
+<td><font color="#3300FF">◆</font>わかさぎ姫<br>(死亡)</td>
+<td><img src="./img/grave.gif" style="border-color: #993300;" alt="icon" title=" " onmouseover="this.src='./user_icon/3108.png'" onmouseout="this.src='./img/grave.gif'" width="45" height="45"></td>
+<td><font color="#993300">◆</font>夢見りあむ<br>(死亡)</td>
+<td><img src="./user_icon/3172.jpg" style="border-color: #FF0000;" alt="icon" title="楽園の素敵な巫女" width="45" height="45"></td>
+<td><font color="#FF0000">◆</font>博麗霊夢<br>(生存中)</td>
+</tr>
+<tr>
+<td><img src="./user_icon/079.jpg" style="border-color: #000000;" alt="icon" title="ははーん。ボクに夢中ですね？" width="45" height="45"></td>
+<td><font color="#000000">◆</font>輿水幸子<br>(生存中)</td>
+<td><img src="./img/grave.gif" style="border-color: #CCFFCC;" alt="icon" title="飴の味は雨あがりの虹のよう。ハリボー、心の一句。まぁグミなんですけど。" onmouseover="this.src='./user_icon/736.jpg'" onmouseout="this.src='./img/grave.gif'" width="45" height="45"></td>
+<td><font color="#CCFFCC">◆</font>高垣楓<br>(死亡)</td>
+<td><img src="./user_icon/416.png" style="border-color: #660033;" alt="icon" title="棒に当たった" width="45" height="45"></td>
+<td><font color="#660033">◆</font>シベリアンタヌキ<br>(生存中)</td>
+<td><img src="./img/grave.gif" style="border-color: #0066FF;" alt="icon" title="" onmouseover="this.src='./user_icon/773.jpg'" onmouseout="this.src='./img/grave.gif'" width="45" height="45"></td>
+<td><font color="#0066FF">◆</font>橘ありす<br>(死亡)</td>
+<td><img src="./img/grave.gif" style="border-color: #000099;" alt="icon" title="無問題。" onmouseover="this.src='./user_icon/3307.png'" onmouseout="this.src='./img/grave.gif'" width="45" height="45"></td>
+<td><font color="#000099">◆</font>チェン<br>(死亡)</td>
+</tr>
+<tr>
+<td><img src="./user_icon/369.gif" style="border-color: #66FF66;" alt="icon" title="できる" width="45" height="45"></td>
+<td><font color="#66FF66">◆</font>できる夫<br>(生存中)</td>
+<td><img src="./img/grave.gif" style="border-color: #FFFFFF;" alt="icon" title="にへへ…流行らせコラ…" onmouseover="this.src='./user_icon/3006.png'" onmouseout="this.src='./img/grave.gif'" width="45" height="45"></td>
+<td><font color="#FFFFFF">◆</font>責任甜花<br>(死亡)</td>
+<td><img src="./img/grave.gif" style="border-color: #000000;" alt="icon" title="焔の錬金術師" onmouseover="this.src='./user_icon/3321.jpg'" onmouseout="this.src='./img/grave.gif'" width="45" height="45"></td>
+<td><font color="#000000">◆</font>ロイ・マスタング<br>(死亡)</td>
+<td><img src="./img/grave.gif" style="border-color: #FF0066;" alt="icon" title="まゆですよぉ" onmouseover="this.src='./user_icon/1025.png'" onmouseout="this.src='./img/grave.gif'" width="45" height="45"></td>
+<td><font color="#FF0066">◆</font>佐久間まゆ<br>(死亡)</td>
+<td><img src="./user_icon/1443.jpg" style="border-color: #FF0000;" alt="icon" title=" " width="45" height="45"></td>
+<td><font color="#FF0000">◆</font>ネロ<br>(生存中)</td>
+</tr>
+<tr>
+<td><img src="./img/grave.gif" style="border-color: #0033FF;" alt="icon" title="初心者卒業頑張ります！" onmouseover="this.src='./user_icon/3047.png'" onmouseout="this.src='./img/grave.gif'" width="45" height="45"></td>
+<td><font color="#0033FF">◆</font>メイショウドトウ<br>(死亡)</td>
+<td><img src="./img/grave.gif" style="border-color: #FFFF00;" alt="icon" title="" onmouseover="this.src='./user_icon/3298.png'" onmouseout="this.src='./img/grave.gif'" width="45" height="45"></td>
+<td><font color="#FFFF00">◆</font>クルース<br>(死亡)</td>
+</tr></tbody></table></div>
+<table class="talk">
+<tbody><tr>
+<td class="system-user" colspan="2">あと3分で投票完了されない方は死して地獄へ堕ちてしまいます</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name">狼の遠吠え</td>
+<td class="say normal">「アオォーン・・・」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">日が落ち、暗く静かな夜がやってきました</td>
+</tr>
+</tbody></table>
+<table class="dead-type">
+<tbody><tr class="dead-type-vote"><td>クルース は投票の結果処刑されました</td></tr>
+</tbody></table>
+<hr><table class="dead-type">
+<tbody><tr><td>夢見りあむ は無残な姿で発見されました</td></tr>
+</tbody></table>
+<table class="vote-list">
+<tbody><tr><td class="vote-times" colspan="4">7 日目 (1 回目)</td></tr>
+<tr><td class="vote-name">博麗霊夢</td><td>1 票</td><td>投票先 →</td><td class="vote-name">クルース</td></tr>
+<tr><td class="vote-name">輿水幸子</td><td>0 票</td><td>投票先 →</td><td class="vote-name">シベリアンタヌキ</td></tr>
+<tr><td class="vote-name">シベリアンタヌキ</td><td>2 票</td><td>投票先 →</td><td class="vote-name">クルース</td></tr>
+<tr><td class="vote-name">できる夫</td><td>0 票</td><td>投票先 →</td><td class="vote-name">博麗霊夢</td></tr>
+<tr><td class="vote-name">ネロ</td><td>0 票</td><td>投票先 →</td><td class="vote-name">クルース</td></tr>
+<tr><td class="vote-name">クルース</td><td>3 票</td><td>投票先 →</td><td class="vote-name">シベリアンタヌキ</td></tr>
+</tbody></table>
+
+</body>

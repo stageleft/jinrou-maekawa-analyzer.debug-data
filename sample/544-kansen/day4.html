@@ -1,0 +1,465 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>汝は人狼なりや？[観戦]</title>
+<link rel="stylesheet" href="./css/game_view.css">
+<link rel="stylesheet" href="./css/game_day.css">
+<meta http-equiv="Refresh" content="15">
+<script type="text/javascript" src="./javascript/output_realtime.js"></script>
+<script type="text/javascript"><!--
+var sentence       = "日没まで ";
+var std_time       = (new Date() - new Date(2021,7,6,23,35,08));
+var end_date       = new Date(2021,7,6,23,34,12) * 1 + std_time;
+var diff_seconds   = Math.floor((new Date(2021,7,6,23,34,12) - new Date(2021,7,6,23,29,12)) / 1000);
+var sound_flag     = false;
+var sound_file     = "";
+var countdown_flag = false;
+var alert_distance = 6;
+
+function updateEndDate(value) {
+  end_date = value + std_time;
+}
+//--></script>
+</head>
+<body onload="output_realtime();">
+<table id="game_top" class="login"><tbody><tr>
+<td class="room"><span class="room-name">【モバマス】Alice Re:Code村</span> [544番地]<br><span class="room-comment">～誰でも歓迎！ テンプレ確認オナシャス！ 更新23:00～</span></td>
+<td class="login-link"><a href="game_view.php?room_no=544&amp;auto_reload=15">[更新]</a>
+[自動更新](<a href="game_view.php?room_no=544">手動</a> <a href="game_view.php?room_no=544&amp;auto_reload=15">【15秒】</a> <a href="game_view.php?room_no=544&amp;auto_reload=30">30秒</a> <a href="game_view.php?room_no=544&amp;auto_reload=45">45秒</a> <a href="game_view.php?room_no=544&amp;auto_reload=60">60秒</a> <a href="game_view.php?room_no=544&amp;auto_reload=90">90秒</a> <a href="game_view.php?room_no=544&amp;auto_reload=120">120秒</a>)
+<a href="game_view.php?room_no=544" target="_blank">[別ページ]</a>
+<a href="./">[戻る]</a></td>
+</tr></tbody></table>
+<table class="login"><tbody><tr>
+<td><form method="post" action="login.php?room_no=544">
+<label for="uname">ユーザ名</label><input type="text" id="uname" name="uname" size="20" value="">
+<label for="trip">＃</label><input type="text" id="trip" name="trip" size="15" maxlength="15" value="">
+<label for="login_password">パスワード</label><input type="password" class="login-password" id="login_password" name="password" size="20" value="">
+<input type="hidden" name="login_manually" value="on">
+<input type="submit" value="ログイン">
+</form></td>
+</tr></tbody></table>
+<div class="game-option">ゲームオプション：<img src="./img/room_option/real_time.gif" class="option" alt="リアルタイム制 (昼： 5 分 / 夜： 3 分)" title="リアルタイム制 (昼： 5 分 / 夜： 3 分)">[5：3]<img src="./img/room_option/dummy_boy.gif" class="option" alt="初日の夜は身代わり君" title="初日の夜は身代わり君"><img src="./img/room_option/gm_login.gif" class="option" alt="身代わり君は GM" title="身代わり君は GM"><img src="./img/room_option/seal_message.gif" class="option" alt="天啓封印" title="天啓封印"><img src="./img/room_option/limit_last_words.gif" class="option" alt="遺言制限" title="遺言制限"><img src="./img/room_option/auto_open_cast.gif" class="option" alt="自動で霊界の配役を公開する" title="自動で霊界の配役を公開する"><img src="./img/room_option/poison.gif" class="option" alt="埋毒者登場 (20人～)" title="埋毒者登場 (20人～)"><img src="./img/room_option/max17.gif" class="option" alt="最大17人" title="最大17人"></div>
+<table class="time-table"><tbody><tr>
+<td>4 日目<span>(生存者 12 人)</span></td>
+<td class="real-time"><form name="realtime_form">
+<input type="text" name="output_realtime" size="60" readonly="">
+</form></td>
+</tr></tbody></table>
+<div class="system-vote">日没まで 時間がありません。投票してください。</div>
+<div class="player"><table><tbody><tr>
+<td><img src="./img/grave.gif" style="border-color: #FF6666;" alt="icon" title="※淫夢要素はありません" onmouseover="this.src='./user_icon/073.jpg'" onmouseout="this.src='./img/grave.gif'" width="45" height="45"></td>
+<td><font color="#FF6666">◆</font>ゆっくりみく<br>(死亡)</td>
+<td><img src="./img/grave.gif" style="border-color: #FF0000;" alt="icon" title="" onmouseover="this.src='./user_icon/2997.jpg'" onmouseout="this.src='./img/grave.gif'" width="45" height="45"></td>
+<td><font color="#FF0000">◆</font>櫻木真乃<br>(死亡)</td>
+<td><img src="./img/grave.gif" style="border-color: #3300FF;" alt="icon" title="ぴっちぴちよ～ " onmouseover="this.src='./user_icon/3249.jpg'" onmouseout="this.src='./img/grave.gif'" width="45" height="45"></td>
+<td><font color="#3300FF">◆</font>わかさぎ姫<br>(死亡)</td>
+<td><img src="./user_icon/3108.png" style="border-color: #993300;" alt="icon" title=" " width="45" height="45"></td>
+<td><font color="#993300">◆</font>夢見りあむ<br>(生存中)</td>
+<td><img src="./user_icon/3172.jpg" style="border-color: #FF0000;" alt="icon" title="楽園の素敵な巫女" width="45" height="45"></td>
+<td><font color="#FF0000">◆</font>博麗霊夢<br>(生存中)</td>
+</tr>
+<tr>
+<td><img src="./user_icon/079.jpg" style="border-color: #000000;" alt="icon" title="ははーん。ボクに夢中ですね？" width="45" height="45"></td>
+<td><font color="#000000">◆</font>輿水幸子<br>(生存中)</td>
+<td><img src="./img/grave.gif" style="border-color: #CCFFCC;" alt="icon" title="飴の味は雨あがりの虹のよう。ハリボー、心の一句。まぁグミなんですけど。" onmouseover="this.src='./user_icon/736.jpg'" onmouseout="this.src='./img/grave.gif'" width="45" height="45"></td>
+<td><font color="#CCFFCC">◆</font>高垣楓<br>(死亡)</td>
+<td><img src="./user_icon/416.png" style="border-color: #660033;" alt="icon" title="棒に当たった" width="45" height="45"></td>
+<td><font color="#660033">◆</font>シベリアンタヌキ<br>(生存中)</td>
+<td><img src="./img/grave.gif" style="border-color: #0066FF;" alt="icon" title="" onmouseover="this.src='./user_icon/773.jpg'" onmouseout="this.src='./img/grave.gif'" width="45" height="45"></td>
+<td><font color="#0066FF">◆</font>橘ありす<br>(死亡)</td>
+<td><img src="./user_icon/3307.png" style="border-color: #000099;" alt="icon" title="無問題。" width="45" height="45"></td>
+<td><font color="#000099">◆</font>チェン<br>(生存中)</td>
+</tr>
+<tr>
+<td><img src="./user_icon/369.gif" style="border-color: #66FF66;" alt="icon" title="できる" width="45" height="45"></td>
+<td><font color="#66FF66">◆</font>できる夫<br>(生存中)</td>
+<td><img src="./user_icon/3006.png" style="border-color: #FFFFFF;" alt="icon" title="にへへ…流行らせコラ…" width="45" height="45"></td>
+<td><font color="#FFFFFF">◆</font>責任甜花<br>(生存中)</td>
+<td><img src="./user_icon/3321.jpg" style="border-color: #000000;" alt="icon" title="焔の錬金術師" width="45" height="45"></td>
+<td><font color="#000000">◆</font>ロイ・マスタング<br>(生存中)</td>
+<td><img src="./user_icon/1025.png" style="border-color: #FF0066;" alt="icon" title="まゆですよぉ" width="45" height="45"></td>
+<td><font color="#FF0066">◆</font>佐久間まゆ<br>(生存中)</td>
+<td><img src="./user_icon/1443.jpg" style="border-color: #FF0000;" alt="icon" title=" " width="45" height="45"></td>
+<td><font color="#FF0000">◆</font>ネロ<br>(生存中)</td>
+</tr>
+<tr>
+<td><img src="./user_icon/3047.png" style="border-color: #0033FF;" alt="icon" title="初心者卒業頑張ります！" width="45" height="45"></td>
+<td><font color="#0033FF">◆</font>メイショウドトウ<br>(生存中)</td>
+<td><img src="./user_icon/3298.png" style="border-color: #FFFF00;" alt="icon" title="" width="45" height="45"></td>
+<td><font color="#FFFF00">◆</font>クルース<br>(生存中)</td>
+</tr></tbody></table></div>
+<table class="talk">
+<tbody><tr>
+<td class="system-user" colspan="2">あと3分で投票完了されない方は死して地獄へ堕ちてしまいます</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000099">◆</font>チェン</td>
+<td class="say normal">「少し冷静になったが、メイショウドトウが●を出すのも少しおかしいな、確かに。」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「それを決めるのは皆さんです！　ボクはいないと思うので！＞りあむさん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「初手で狼吊れてるのは幸いだけど、さてどう灰を見るかだわ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFF00">◆</font>クルース</td>
+<td class="say normal">「決め打つならほぼロイさん真に傾きそうだけどぉ、安定とるならロラだよぉ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「えーっと<br>なにかいえばいいのかというかどうしましょう、えー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFFFF">◆</font>責任甜花</td>
+<td class="say normal">「にへへ…真っ当な意見言ってるところが狼……」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000099">◆</font>チェン</td>
+<td class="say normal">「いや、冷静に考えるとライン切らないと霊ローラーにはならないはずではあるんだよな。」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>ロイ・マスタング</td>
+<td class="say normal">「別にしてもらっても構わない<br>だがロラという手法は安定という名目でゴリ押しで<br>明日なり私投票が入っても私は責任は取れんぞ＞輿水幸子」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「明日のまゆさんの結果は灰戻しで構いません<br>明後日に【対立している占い師さんと霊能者さん】の決め打ちです<br><br>余裕ですね！」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「平和出ないなら10&gt;8&gt;6&gt;4だからー…激しく平和が欲しい所ね…」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFF00">◆</font>クルース</td>
+<td class="say normal">「だから、村の私たちがすべきは灰同士の殴り合いだねぇ<br>完灰はいっぱいいるよぉ！やったねぇ！」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>ネロ</td>
+<td class="say normal">「すまぬが今のメイショウドトウの意見を見てなおのこと<br>ロイ真を決め打つ心情でいる」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#993300">◆</font>夢見りあむ</td>
+<td class="say normal">「その決め打ちって９９：１でまゆちゃん吊れるじゃん！！＞幸子ちゃん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#0033FF">◆</font>メイショウドトウ</td>
+<td class="say normal">「投票は対抗さんにしておきますぅ…」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「生き残ってたら頑張る・・・&gt;さちこ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFFFF">◆</font>責任甜花</td>
+<td class="say normal">「甜花…決め打ち怖い…外れたら誰かのせいにする………」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「できますね？＞皆さん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>ロイ・マスタング</td>
+<td class="say normal">「と思っていたら特にそういうわけではないらしいな」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000099">◆</font>チェン</td>
+<td class="say normal">「初手囲いの物凄く臭いムーブだが<br>こういうことされると狼に見えなくなるんだよな……！＞噛まれ位置非把握」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>ロイ・マスタング</td>
+<td class="say normal">「で吊りが２回だから勝負にはなるか」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「＞クルース<br>そうね、佐久間さん狼でも良いし、確実に人外もう１人落ちるから」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFF00">◆</font>クルース</td>
+<td class="say normal">「まゆちゃん視点だとまだ戦いやすいけど、真乃ちゃん視点だと～って思ってたけど、霊能視点2w見えるんならどっちでも戦えるねぇ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#66FF66">◆</font>できる夫</td>
+<td class="say normal">「なのでつまりそのままロイマスタングさんが真<br>メイショウドトウさんが狂かなと<br>そこ狐ならたぶん白結果だしてると思います　霊残していく展開にしたいのであればまゆさん切ったほうがいいと思いますので」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>ロイ・マスタング</td>
+<td class="say normal">「……いやまあ<br>今日から対抗、私、占い騙りと吊りきれば<br>誰視点でもLWLFにはなる」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say red">「８＞６＞４＞２。3吊りですね<br>残り8人の日に「まゆさん」と「ロイさん」で決め打ちでお願いします<br><br>できますね？＞皆さん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#0033FF">◆</font>メイショウドトウ</td>
+<td class="say normal">「わかりましたぁ…対抗さんは狼さんか狂人さんだと思っています…いずれ破綻したら吊って下さいね…」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「ふむふむ<br>そうなんですね＞クルースさん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>ネロ</td>
+<td class="say normal">「そういう状況も含めて霊ロラ完遂はしたくはない<br>とはいっておくぞ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「＞甜花<br>判定割れが２連で共有噛まれ発生だと…あんまり呪殺も期待出来ないもんね」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000099">◆</font>チェン</td>
+<td class="say normal">「はい……。＞りあむ<br>そこからだったなら仕方ないな……気にするな。」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「可愛い子はみんなで囲うのだっ（ぐるぐる」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFF00">◆</font>クルース</td>
+<td class="say normal">「だよ～。最大限まゆちゃんの真も追えるよね～って夜考えてたんだぁ＞霊夢ちゃん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFFFF">◆</font>責任甜花</td>
+<td class="say normal">「ついでに霊ロラで人外1匹吊れる……<br>真狼ー真狼見なければ…つまり狂混じり見れば……狼数キープして最大人外数減らせる……」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>ロイ・マスタング</td>
+<td class="say red">「ああちなみにいうが前述の通り<br>「占い騙りが狼」読みが強いから占い騙り吊りを私は推奨しない<br>と断言はしておく＞共有二人」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「その上で。明日はまゆさんの結果は灰に戻して灰吊りでお願いします<br>えーと今日が12人なので」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#993300">◆</font>夢見りあむ</td>
+<td class="say normal">「すいません、そもそも真乃ちゃん噛まれてますよね…<br>クソザコナメクジなのに偉そうなこと行って申し訳ありませんでした＞チェン」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000099">◆</font>チェン</td>
+<td class="say normal">「ということで、真乃真まゆ狼-ロイ真ドトウ狂にBETしよう。」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#66FF66">◆</font>できる夫</td>
+<td class="say normal">「真狂ー真狼だとやはり初手の結果割れがあまり霊の内訳にそぐわないように見えまして<br>そうなると残ったまゆさんは推定贋気味で見ていくことになりそうです」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「そうなんだよねー&gt;れいむ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「＞クルース<br>霊能ロラして呪殺を待つ（偽でも狼飼い位で考慮）って事？」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「リアムちゃん囲う？っていうのはよくわからないですけど<br>そういうことする意味ってあるんでしょうか」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say strong">「では、今日はメイショウドトウさん吊りです」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「ボクが明日、いなくなっても大丈夫なように進行は残しておきましょう<br>仕方ないですねぇ！」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#0033FF">◆</font>メイショウドトウ</td>
+<td class="say red">「正直、対抗さんが噛まれているので信用はそこまで高くないように見えたのですが…結果は●で当たっていたので何ともいえない所ですぅ…」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFFFF">◆</font>責任甜花</td>
+<td class="say normal">「霊結果は論ずるに値しない……どっちみち狼1匹吊れてる……」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「＞タヌキ<br>ええ、占い真狼で真噛まれたんじゃないかって噛みに思えるわね＞今日の噛み」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>ロイ・マスタング</td>
+<td class="say red">「とはいえこれも変則的ではあるがライン勝負だ<br>噛まれた占いを信じるか、そうでない占いを信じるか<br>という意味では、だが（霊能もそのラインにそって別れているわけだからな）」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFF00">◆</font>クルース</td>
+<td class="say normal">「まゆちゃん視点対抗狂、霊能真狼だよねぇ？<br>まゆちゃん視点霊ロラして1w1k残りだからまゆちゃん真でも全然戦えると思うんだぁ～」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>ネロ</td>
+<td class="say normal">「私本人の意見をいえば、ここで共有噛みあることから考えて<br>あまり真残りには期待していない。<br>場をみればまゆ-メイショウドトウが狼ラインのロイ真には見える」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「霊能結果が割れるんならもうそこ吊りきろうっていうか<br>共有噛みに移行してる段階で役職全部吊りたい(うずうず」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「村の皆さんは「霊能視点で残り２W」とだけ覚えておいてください」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000099">◆</font>チェン</td>
+<td class="say normal">「念の為の狂アピにしか見えないというか<br>メイショウドトウがラインを切る理由がないだけではないのか？」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「佐久間さんは飼い位で考えて良いんじゃない？って判定の割れ方だわ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「お昼寝なのに朝まで寝てしまいましたか＞てんかちゃん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#66FF66">◆</font>できる夫</td>
+<td class="say normal">「どちらもともに狼は吊れている点は、いいと思います」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>ロイ・マスタング</td>
+<td class="say normal">「少々予想外だな<br>対抗も霊能結果○をすると予測していたのだが」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「本命で真狼-真狂を想定、うすーく真狐-真狂を見てる(わふん<br><br>まゆ狼の場合、即占い噛みって事はめちゃくちゃ強い灰狼か<br>りあむ囲いなんだけどーって感じ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFFFF">◆</font>責任甜花</td>
+<td class="say normal">「お昼寝（夜）してたらすぐ朝になった…何を言ってるか………」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000099">◆</font>チェン</td>
+<td class="say normal">「真狂-真狼/真狼-真狂/真狼-真狼辺りが本線だと思うのだが。&gt;2-2の真混じり前提とした場合の内訳<br><br>狼混じり濃厚の場合に片方が投票していてもう片方が噛まれて死んでいるなら、身内切りでない限り非狼では？というだけの話ではあるのだが。<br>真狂-真狼濃厚で見ているならそう言ってくれ。＞夢見りあむ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say red">「では、メイショウドトウさんに質問します。あなたは今日、まゆさんを吊ってほしいですか？」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say weak">「わんわん＞まゆ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFF00">◆</font>クルース</td>
+<td class="say normal">「もう霊ロラでいいんじゃないかなぁ？<br>ライン戦はもう破綻してるんだし、霊ロラ→そこまでに呪殺が出なければまゆちゃん吊りでいいと思うんだぁ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#993300">◆</font>夢見りあむ</td>
+<td class="say normal">「んー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>ネロ</td>
+<td class="say normal">「この場合はメイショウドトウを吊るか<br>それともグレーを吊るか、どちらかになるな」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「ふーん…＞また判定割れで共有片方噛まれ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000099">◆</font>チェン</td>
+<td class="say normal">「共有噛み、ふむ。」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFF00">◆</font>クルース</td>
+<td class="say normal">「あ、両霊能視点1w吊れるんだねぇ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「ん？村犬？」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000099">◆</font>チェン</td>
+<td class="say normal">「おはよう。」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「では、これでどちら視点でも残り２Wですね」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#66FF66">◆</font>できる夫</td>
+<td class="say normal">「あら　ここも割れるのですか」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>ロイ・マスタング</td>
+<td class="say normal">「ライン勝負で霊能騙りが狼と仮定して身内する意味はない、と考える。<br>仮に霊能者が１で私を利用する、というのならともかく<br>霊能騙りをだしたライン勝負でそれをする意味がない（占い騙りならともかくだが）<br><br>故にメイショウドトウは非狼と読む。<br>ならば、占いの残った中身は狼ではないか、となること<br>また、昨日いったこと（橘ありすはわかさぎ姫に投票していた）を考えると<br>ラインはつながらないと予測する。（ここまで全部夜に書いた）」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFF00">◆</font>クルース</td>
+<td class="say normal">「おはよぉ～」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say weak">「狐混じりと言うのはよくわからないですけど、どうしてそうなったのかなって思いました。」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「ありゃーん-」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「んー…？何か噛み早いわよね…？」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#66FF66">◆</font>できる夫</td>
+<td class="say normal">「おはようございます」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say strong">「シベリアンタヌキさんは〇、村人でしたねぇ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#0033FF">◆</font>メイショウドトウ</td>
+<td class="say strong">「霊能CO　わかさぎ姫さん　●ですぅ…」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>ネロ</td>
+<td class="say normal">「朝であるな」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「指定先は第５候補まで決めてありますよ！」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「おはよ。共有噛みなり○噛みなら、大体佐久間さん狼じゃない？って」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>ロイ・マスタング</td>
+<td class="say strong">「霊能結果は○だ」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">朝日が昇り、4 日目の朝がやってきました</td>
+</tr>
+</tbody></table>
+<table class="system-lastwords"><tbody><tr>
+<td>夜が明けると前の日に亡くなった方の遺言書が見つかりました</td>
+</tr></tbody></table>
+<table class="lastwords">
+<tbody><tr>
+<td class="lastwords-title">高垣楓<span>さんの遺言</span></td>
+<td class="lastwords-body">グミ。</td>
+</tr>
+</tbody></table>
+<table class="dead-type">
+<tbody><tr><td>高垣楓 は無残な姿で発見されました</td></tr>
+</tbody></table>
+<hr><table class="dead-type">
+<tbody><tr class="dead-type-vote"><td>わかさぎ姫 は投票の結果処刑されました</td></tr>
+</tbody></table>
+<table class="vote-list">
+<tbody><tr><td class="vote-times" colspan="4">3 日目 (1 回目)</td></tr>
+<tr><td class="vote-name">わかさぎ姫</td><td>13 票</td><td>投票先 →</td><td class="vote-name">佐久間まゆ</td></tr>
+<tr><td class="vote-name">夢見りあむ</td><td>0 票</td><td>投票先 →</td><td class="vote-name">わかさぎ姫</td></tr>
+<tr><td class="vote-name">博麗霊夢</td><td>0 票</td><td>投票先 →</td><td class="vote-name">わかさぎ姫</td></tr>
+<tr><td class="vote-name">輿水幸子</td><td>0 票</td><td>投票先 →</td><td class="vote-name">わかさぎ姫</td></tr>
+<tr><td class="vote-name">高垣楓</td><td>0 票</td><td>投票先 →</td><td class="vote-name">わかさぎ姫</td></tr>
+<tr><td class="vote-name">シベリアンタヌキ</td><td>0 票</td><td>投票先 →</td><td class="vote-name">わかさぎ姫</td></tr>
+<tr><td class="vote-name">チェン</td><td>0 票</td><td>投票先 →</td><td class="vote-name">わかさぎ姫</td></tr>
+<tr><td class="vote-name">できる夫</td><td>0 票</td><td>投票先 →</td><td class="vote-name">わかさぎ姫</td></tr>
+<tr><td class="vote-name">責任甜花</td><td>0 票</td><td>投票先 →</td><td class="vote-name">わかさぎ姫</td></tr>
+<tr><td class="vote-name">ロイ・マスタング</td><td>0 票</td><td>投票先 →</td><td class="vote-name">わかさぎ姫</td></tr>
+<tr><td class="vote-name">佐久間まゆ</td><td>1 票</td><td>投票先 →</td><td class="vote-name">わかさぎ姫</td></tr>
+<tr><td class="vote-name">ネロ</td><td>0 票</td><td>投票先 →</td><td class="vote-name">わかさぎ姫</td></tr>
+<tr><td class="vote-name">メイショウドトウ</td><td>0 票</td><td>投票先 →</td><td class="vote-name">わかさぎ姫</td></tr>
+<tr><td class="vote-name">クルース</td><td>0 票</td><td>投票先 →</td><td class="vote-name">わかさぎ姫</td></tr>
+</tbody></table>
+
+</body>

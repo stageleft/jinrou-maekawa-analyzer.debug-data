@@ -1,0 +1,799 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>汝は人狼なりや？[観戦]</title>
+<link rel="stylesheet" href="./css/game_view.css">
+<link rel="stylesheet" href="./css/game_beforegame.css">
+<meta http-equiv="Refresh" content="15">
+</head>
+<body>
+<table id="game_top" class="login"><tbody><tr>
+<td class="room"><span class="room-name">【モバマス】Alice Re:Code村</span> [544番地]<br><span class="room-comment">～誰でも歓迎！ テンプレ確認オナシャス！ 更新23:00～</span></td>
+<td class="login-link"><a href="game_view.php?room_no=544&amp;auto_reload=15">[更新]</a>
+[自動更新](<a href="game_view.php?room_no=544">手動</a> <a href="game_view.php?room_no=544&amp;auto_reload=15">【15秒】</a> <a href="game_view.php?room_no=544&amp;auto_reload=30">30秒</a> <a href="game_view.php?room_no=544&amp;auto_reload=45">45秒</a> <a href="game_view.php?room_no=544&amp;auto_reload=60">60秒</a> <a href="game_view.php?room_no=544&amp;auto_reload=90">90秒</a> <a href="game_view.php?room_no=544&amp;auto_reload=120">120秒</a>)
+<a href="game_view.php?room_no=544" target="_blank">[別ページ]</a>
+<a href="./">[戻る]</a></td>
+</tr></tbody></table>
+<table class="login"><tbody><tr>
+<td><form method="post" action="login.php?room_no=544">
+<label for="uname">ユーザ名</label><input type="text" id="uname" name="uname" size="20" value="">
+<label for="trip">＃</label><input type="text" id="trip" name="trip" size="15" maxlength="15" value="">
+<label for="login_password">パスワード</label><input type="password" class="login-password" id="login_password" name="password" size="20" value="">
+<input type="hidden" name="login_manually" value="on">
+<input type="submit" value="ログイン">
+</form></td>
+<td class="login-link"><span class="closing"></span><a href="user_manager.php?room_no=544"><span>[住民登録]</span></a></td>
+</tr></tbody></table>
+<div class="game-option">ゲームオプション：<img src="./img/room_option/real_time.gif" class="option" alt="リアルタイム制 (昼： 5 分 / 夜： 3 分)" title="リアルタイム制 (昼： 5 分 / 夜： 3 分)">[5：3]<img src="./img/room_option/dummy_boy.gif" class="option" alt="初日の夜は身代わり君" title="初日の夜は身代わり君"><img src="./img/room_option/gm_login.gif" class="option" alt="身代わり君は GM" title="身代わり君は GM"><img src="./img/room_option/seal_message.gif" class="option" alt="天啓封印" title="天啓封印"><img src="./img/room_option/limit_last_words.gif" class="option" alt="遺言制限" title="遺言制限"><img src="./img/room_option/auto_open_cast.gif" class="option" alt="自動で霊界の配役を公開する" title="自動で霊界の配役を公開する"><img src="./img/room_option/poison.gif" class="option" alt="埋毒者登場 (20人～)" title="埋毒者登場 (20人～)"><img src="./img/room_option/max17.gif" class="option" alt="最大17人" title="最大17人"></div>
+<table class="time-table"><tbody><tr>
+</tr></tbody></table>
+<div class="player"><table><tbody><tr>
+<td class="already-vote"><img src="./user_icon/073.jpg" style="border-color: #FF6666;" alt="icon" title="※淫夢要素はありません" width="45" height="45"></td>
+<td class="already-vote"><font color="#FF6666">◆</font>ゆっくりみく<br>(生存中)</td>
+<td><img src="./user_icon/2997.jpg" style="border-color: #FF0000;" alt="icon" title="" width="45" height="45"></td>
+<td><font color="#FF0000">◆</font>櫻木真乃<br>(生存中)</td>
+<td class="already-vote"><img src="./user_icon/3249.jpg" style="border-color: #3300FF;" alt="icon" title="ぴっちぴちよ～ " width="45" height="45"></td>
+<td class="already-vote"><font color="#3300FF">◆</font>わかさぎ姫<br>(生存中)</td>
+<td class="already-vote"><img src="./user_icon/3108.png" style="border-color: #993300;" alt="icon" title=" " width="45" height="45"></td>
+<td class="already-vote"><font color="#993300">◆</font>夢見りあむ<br>(生存中)</td>
+<td class="already-vote"><img src="./user_icon/3172.jpg" style="border-color: #FF0000;" alt="icon" title="楽園の素敵な巫女" width="45" height="45"></td>
+<td class="already-vote"><font color="#FF0000">◆</font>博麗霊夢<br>(生存中)</td>
+</tr>
+<tr>
+<td class="already-vote"><img src="./user_icon/079.jpg" style="border-color: #000000;" alt="icon" title="ははーん。ボクに夢中ですね？" width="45" height="45"></td>
+<td class="already-vote"><font color="#000000">◆</font>輿水幸子<br>(生存中)</td>
+<td class="already-vote"><img src="./user_icon/736.jpg" style="border-color: #CCFFCC;" alt="icon" title="飴の味は雨あがりの虹のよう。ハリボー、心の一句。まぁグミなんですけど。" width="45" height="45"></td>
+<td class="already-vote"><font color="#CCFFCC">◆</font>高垣楓<br>(生存中)</td>
+<td class="already-vote"><img src="./user_icon/416.png" style="border-color: #660033;" alt="icon" title="棒に当たった" width="45" height="45"></td>
+<td class="already-vote"><font color="#660033">◆</font>シベリアンタヌキ<br>(生存中)</td>
+<td class="already-vote"><img src="./user_icon/773.jpg" style="border-color: #0066FF;" alt="icon" title="" width="45" height="45"></td>
+<td class="already-vote"><font color="#0066FF">◆</font>橘ありす<br>(生存中)</td>
+<td class="already-vote"><img src="./user_icon/3307.png" style="border-color: #000099;" alt="icon" title="無問題。" width="45" height="45"></td>
+<td class="already-vote"><font color="#000099">◆</font>チェン<br>(生存中)</td>
+</tr>
+<tr>
+<td class="already-vote"><img src="./user_icon/369.gif" style="border-color: #66FF66;" alt="icon" title="できる" width="45" height="45"></td>
+<td class="already-vote"><font color="#66FF66">◆</font>できる夫<br>(生存中)</td>
+<td class="already-vote"><img src="./user_icon/3006.png" style="border-color: #FFFFFF;" alt="icon" title="にへへ…流行らせコラ…" width="45" height="45"></td>
+<td class="already-vote"><font color="#FFFFFF">◆</font>責任甜花<br>(生存中)</td>
+<td class="already-vote"><img src="./user_icon/3321.jpg" style="border-color: #000000;" alt="icon" title="焔の錬金術師" width="45" height="45"></td>
+<td class="already-vote"><font color="#000000">◆</font>ロイ・マスタング<br>(生存中)</td>
+<td class="already-vote"><img src="./user_icon/1025.png" style="border-color: #FF0066;" alt="icon" title="まゆですよぉ" width="45" height="45"></td>
+<td class="already-vote"><font color="#FF0066">◆</font>佐久間まゆ<br>(生存中)</td>
+<td class="already-vote"><img src="./user_icon/1443.jpg" style="border-color: #FF0000;" alt="icon" title=" " width="45" height="45"></td>
+<td class="already-vote"><font color="#FF0000">◆</font>ネロ<br>(生存中)</td>
+</tr>
+<tr>
+<td class="already-vote"><img src="./user_icon/3047.png" style="border-color: #0033FF;" alt="icon" title="初心者卒業頑張ります！" width="45" height="45"></td>
+<td class="already-vote"><font color="#0033FF">◆</font>メイショウドトウ<br>(生存中)</td>
+<td class="already-vote"><img src="./user_icon/3298.png" style="border-color: #FFFF00;" alt="icon" title="" width="45" height="45"></td>
+<td class="already-vote"><font color="#FFFF00">◆</font>クルース<br>(生存中)</td>
+</tr></tbody></table></div>
+<table class="talk">
+<tbody><tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say green">「＞佐久間さん　この村初めてとのことですけども<br>人狼自体は別に初めてではない感じで合ってますか？」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>櫻木真乃</td>
+<td class="say strong">「3」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「わかさぎ姫さん<br>よろしくおねがいしますね」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#3300FF">◆</font>わかさぎ姫</td>
+<td class="say normal">「アグレッシブTNKスタイル・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>櫻木真乃</td>
+<td class="say normal">「ではカウント3秒で行きますね」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「＞わかさぎ姫<br>○○は嘘つき理論で考えなさいな」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFFFF">◆</font>責任甜花</td>
+<td class="say normal">「＞わかさぎ　にへへ……アグレッシブ……」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「いいってことよー&gt;くるーす」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000099">◆</font>チェン</td>
+<td class="say normal">「初心者か、しっかり楽しめるといいな。」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say green">「あー忘れてた、もう一つ連絡を<br>９日の月曜が祝日なんで<br>２２：３０にわかめて鯖で村建てをします<br>建てるのは１７人以上、１８猫かその時の参加者人数次第ではあるけど<br>いけるのであればデスノ村（２０人）も視野に入れてます<br>なので、よければどうぞー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「お名前に初めてで強いとかそういうのあるんですか」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>櫻木真乃</td>
+<td class="say normal">「それではみなさんの投票を確認しました」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFF00">◆</font>クルース</td>
+<td class="say normal">「たぬちゃんありがとうねぇ～」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「ちょうど帰ってきた(真顔たぬき」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>櫻木真乃</td>
+<td class="say normal">「ほわっ……」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#3300FF">◆</font>わかさぎ姫</td>
+<td class="say normal">「初人狼でそのHNはすごすぎでは？？？？？＞甜花さん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFF00">◆</font>クルース</td>
+<td class="say normal">「待たせちゃってごめんねぇ～」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>ネロ</td>
+<td class="say normal">「問題はあるまい」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「皆楽しめればそれで良いわ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFFFF">◆</font>責任甜花</td>
+<td class="say normal">「＞RIM　にへへ…霊夢さん、詳しい……」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#CCFFCC">◆</font>高垣楓</td>
+<td class="say normal">「そもそも仇名がいけないことですからね。<br>私のことをガッキーと呼んだら逃げ恥なのでちゃんと名前で呼んでください。」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#0033FF">◆</font>メイショウドトウ</td>
+<td class="say normal">「幸子ちゃんはカワイイ、覚えました…」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「ふふーん。分からないことがあればボクに何でも聞いていいですよ！」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say weak">「あ、GM ちょっと待ってあげて　クルースが離席してるはず」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFF00">◆</font>クルース</td>
+<td class="say normal">「まにあったぁ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFFFF">◆</font>責任甜花</td>
+<td class="say normal">「初人狼です…」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#0033FF">◆</font>メイショウドトウ</td>
+<td class="say normal">「と、投票しましたぁ…」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#3300FF">◆</font>わかさぎ姫</td>
+<td class="say normal">「よかった、楽しんで遊びましょうね！＞まゆさん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「＞甜花<br>TDN表記便利だもんね。しょうがないわ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「タヌキに罪はないって芥川も言ってたぞぅ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「まゆもここ、初めてなんです」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「大丈夫です、初心者さんでも経験者さんでもボクはカワイイので！＞メイショウドトウさん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「問題無いわ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>櫻木真乃</td>
+<td class="say normal">「むんっ！」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFFFF">◆</font>責任甜花</td>
+<td class="say normal">「TDN言語が悪い…甜花悪くない……」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#993300">◆</font>夢見りあむ</td>
+<td class="say normal">「（やばい…尊い…ガチ推ししなきゃ…）」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#3300FF">◆</font>わかさぎ姫</td>
+<td class="say normal">「初心者さんですねやったーー！」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「てんかちゃんなんですね」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say red">「２村目は終わってから希望者１０人以上いたら<br>建てる形でいくね　じゃあねほぼほぼ開始前の投票済んでるので<br>櫻木さん以外の人が開始準備の投票済んだら<br>櫻木さんが開始の音頭とって、初めてもらおうと思ってるんだけども<br>みんな問題ないですかね？　時間前だけども<br><br>問題ある人は言って下さい」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#0033FF">◆</font>メイショウドトウ</td>
+<td class="say normal">「まだまだ初心者ですけど…よ、よろしくお願いします…」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「え、え、どっちなんでしょう」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「＞まゆ<br>大崎さん（甜花）よ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFFFF">◆</font>責任甜花</td>
+<td class="say normal">「たぬき（すっとぼけ）……」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「そうだったのか・・・！＞ますたんぐ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「てんかちゃんでしたか<br>タヌキさんとどっちかなと思って」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「だからりあむさんも最高なんです。それを証明しましょう！」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>ロイ・マスタング</td>
+<td class="say normal">「たぬきではないだろうか」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「ボクたちはアイドルです<br>ファンの方にとって、アイドルはいつだって最高なんです。最高じゃなきゃダメなんですよ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「？＞りあむちゃん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「てんか?&gt;まゆ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#993300">◆</font>夢見りあむ</td>
+<td class="say normal">「（やばい…幸子ちゃんとまゆちゃんから声かけられた…ファンに怒られる…死んで詫びよう）」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「何を言ってるんです？＞りあむさん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「あ、そういえば<br>TNKさんってどなたでしょう」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>櫻木真乃</td>
+<td class="say normal">「私は何人でも大丈夫です。むんっ！」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「17人で埋まったらもう1村裏に建てるのも良いと思うんですよ<br>参加したい人がいたら」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「＞TNK<br>世も末だわ（真顔）」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFFFF">◆</font>責任甜花</td>
+<td class="say normal">「事務所でGMの動画見てたら人が集まってきた……あう……」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFF00">◆</font>クルース</td>
+<td class="say normal">「(どっちかっていうとぉ、お花摘みたいんだよねぇ)」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「二村してもよい、シベリアンタヌキとはそういうことだー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#0066FF">◆</font>橘ありす</td>
+<td class="say normal">「別にそれでもいいですけど、早めに始められる方が集まる速度は上がるんじゃないかと思います。」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「揃ったなら前倒しで開始もありだとまゆ思いますけど」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「当然です。ボクはカワイイので！」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#CCFFCC">◆</font>高垣楓</td>
+<td class="say normal">「でも。論理的逆説。<br>心配があったらカワイイボクではないということになりますよ幸子ちゃん。大丈夫ですか。」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#993300">◆</font>夢見りあむ</td>
+<td class="say normal">「底辺クソザコアイドルと同じとか失礼すぎますよぉ＞幸子ちゃん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say green">「再掲<br><br>先週も言ったんだけども村の宣伝動画を投稿しました<br>内容は死神手帳村の動画です。よろしければご視聴下さい<br>https://www.nicovideo.jp/watch/sm39086164<br><br>それからだけども、初めての人とかいたら<br>テンプレ確認お願いします<br>ガチの初人狼兄貴いたら初心者ＣＯしてもらっても大丈夫ですー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#CCFFCC">◆</font>高垣楓</td>
+<td class="say normal">「ふふ、いい天気（ギリギリのライン）＞霊夢」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「幸子ちゃんがそういうなら大丈夫、ですかねぇ＞幸子ちゃん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#3300FF">◆</font>わかさぎ姫</td>
+<td class="say normal">「アークナイツですね」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say red">「１０分くらいあるけどもどうすっかな<br>今回は流石にだけども<br>次回から、もしも早めに１７人揃うこととかあれば<br>枠の拡張とかも考えてます。最大で２２人くらいまで<br>できるだけ多くの人に参加してもらいたいと思っているので。」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「＞高垣楓<br>本っ当、暑いもんよね」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFF00">◆</font>クルース</td>
+<td class="say normal">「あれぇもう閉まってるんだっけぇ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFFFF">◆</font>責任甜花</td>
+<td class="say normal">「＞GM　にへへ……クッキー☆の派生作品（大嘘）…流行らせコラ……」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say red">「カワイイボクがいるので何も心配ありません！」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#CCFFCC">◆</font>高垣楓</td>
+<td class="say normal">「暑いっすね今日も（ギリギリのライン）」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「ふふーん。ご安心ください、まゆさん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#DDDDDD">◆</font>kari</td>
+<td class="say ">「kari さんが登録情報を変更しました。<br>村人の名前：kari → クルース<br>アイコン：No. 1 (明灰) → No. 3298 (クルース)」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「この時間から始めるのは実は初めてで少し不安なんですよね・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「埋まったわね、宜しく。ついでにウチの神社のお賽銭箱埋まって<br>参拝客が多く来ると良いもんだけど」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「ありすれこーど？」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>ロイ・マスタング</td>
+<td class="say normal">「埋まったようだな<br>私の準備はもちろんできている」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say normal">「メイショウさん、灰かりさんこんこんー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say normal">「＞ＴＮＫさん<br><br>あ、そうだ（唐突）<br>絵と雰囲気だけはいいクッキー☆みたいなゲームをやってたら<br>キャラのセリフに「いい天気」とか「お覚悟」とかあって<br>草生やしてしまった。問題のゲームは村名」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「ボクのいる場所はいつだってオンステージですから<br>野外コンサートもなんのそのですよ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「りあむちゃん、大丈夫ですか？<br>お熱とかはかります？」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#3300FF">◆</font>わかさぎ姫</td>
+<td class="say normal">「１０分前、お休み前だからですけね、満員」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#DDDDDD">◆</font>kari</td>
+<td class="say normal">「こんばんは」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#0033FF">◆</font>メイショウドトウ</td>
+<td class="say normal">「こ、こんばんわですぅ…」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#DDDDDD">◆</font>kari</td>
+<td class="say normal">「ko」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">kari が村の集会場にやってきました</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#3300FF">◆</font>わかさぎ姫</td>
+<td class="say normal">「閉め出されてるくせに・・・」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">メイショウドトウ が村の集会場にやってきました</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「ふふーん。ボクのカワイさに吸い寄せられましたね皆さん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「そこは深く突っ込まないでおこ…」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「りあむさんもアイドルですよね？」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say normal">「佐久間さん、ネロさんこんこんー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>ネロ</td>
+<td class="say normal">「よろしく頼む」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0066">◆</font>佐久間まゆ</td>
+<td class="say normal">「こんばんは、よろしくおねがいしますねぇ」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">ネロ が村の集会場にやってきました</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#CCFFCC">◆</font>高垣楓</td>
+<td class="say normal">「ずいぶん日本的な縦並びですね」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">佐久間まゆ が村の集会場にやってきました</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say normal">「ロイさんこんこんー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say green">「再掲<br><br>先週も言ったんだけども村の宣伝動画を投稿しました<br>内容は死神手帳村の動画です。よろしければご視聴下さい<br>https://www.nicovideo.jp/watch/sm39086164<br><br>それからだけども、初めての人とかいたら<br>テンプレ確認お願いします<br>ガチの初人狼兄貴いたら初心者ＣＯしてもらっても大丈夫ですー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFFFF">◆</font>責任甜花</td>
+<td class="say normal">「甜花悪くない……悪いのは他の人……」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#993300">◆</font>夢見りあむ</td>
+<td class="say normal">「（あ、気づいたらめっちゃアイドルおる…<br>　この空気吸ったらぼく死ぬんじゃ…）」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「成程、中々上手いわね…＞責任甜花」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>ロイ・マスタング</td>
+<td class="say normal">「よろしく頼むとしよう」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">ロイ・マスタング が村の集会場にやってきました</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「ふふーん。こんばんは、カワイイボクを褒めていいですよ？」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#3300FF">◆</font>わかさぎ姫</td>
+<td class="say normal">「これはいい甜花さんですね」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say normal">「ＴＮＫさんこんこんー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>櫻木真乃</td>
+<td class="say normal">「アイコンポチポチしながら選んでたらこういうこともありますよね……」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFFFF">◆</font>責任甜花</td>
+<td class="say normal">「こんばんは…」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">責任甜花 が村の集会場にやってきました</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「わざとですよね！？＞楓さん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFFFF">◆</font>櫻木真乃</td>
+<td class="say ">「櫻木真乃 さんが登録情報を変更しました。<br>アイコン：No. 3146 (黛 冬優子) → No. 2997 (櫻木真乃（さくらぎまの）)」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FFFFFF">◆</font>櫻木真乃</td>
+<td class="say normal">「草」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#CCFFCC">◆</font>高垣楓</td>
+<td class="say normal">「なるほど……どうやら、ﾝﾌｯ、歌が間違ってたみたいですね。＞幸子」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF9999">◆</font>kari</td>
+<td class="say ">「kari さんが登録情報を変更しました。<br>村人の名前：kari → 櫻木真乃<br>アイコン：No. 10 (さくら色) → No. 3146 (黛 冬優子)」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000099">◆</font>チェン</td>
+<td class="say normal">「ああ、こんばんわ。」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「ホビット族でもドワーフ族でもありません！<br>ボクは小さカワイイですけど！」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「さっちゃん(いぬ)」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「犬じゃないですよ！＞楓さん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「ホビットみたいな見た目なのに・・・&gt;さちこ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#CCFFCC">◆</font>高垣楓</td>
+<td class="say normal">「そうなんですか？」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say normal">「できる夫さんこんこんー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#66FF66">◆</font>できる夫</td>
+<td class="say normal">「よろしくお願いします」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say normal">「チェンさんこんこん－」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「ぷはー、今日もいい天気（暑いけど）」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「今ならなんとクッションも貸してあげよー&gt;れいむ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#CCFFCC">◆</font>高垣楓</td>
+<td class="say normal">「幸子ちゃんはね、ほんとはさっちゃん（犬）っていうんだよホントわね♪」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">できる夫 が村の集会場にやってきました</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000099">◆</font>チェン</td>
+<td class="say normal">「よろしく頼む。」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">チェン が村の集会場にやってきました</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「せっかくの申し出ですが遠慮しますよ！　ボクは人間、ヒューマンです！」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say green">「こっちからの連絡は<br>先週も言ったんだけども<br>村の宣伝動画を投稿しました<br>内容は死神手帳村の動画です<br>よろしければご視聴下さい<br>https://www.nicovideo.jp/watch/sm39086164<br><br>それからだけども、初めての人とかいたら<br>テンプレ確認お願いね<br>ガチの初人狼兄貴いたら初心者ＣＯしてもらっても大丈夫」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「犬小屋って…ｗ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「まぁまぁ、俺の犬小屋をシャアしてあげてもいいぞぅ&gt;さちこ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#3300FF">◆</font>わかさぎ姫</td>
+<td class="say normal">「ﾋﾟｼｬｯ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「ま、いっか。素敵なお賽銭箱はここよ、奉納して行ってね♪」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「開けましょうよ！　可愛いボクがどうなっても知りませんよ！？」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「勘違いはあるからね、しかたないね&gt;みく」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#3300FF">◆</font>わかさぎ姫</td>
+<td class="say normal">「わからない・・・私は感覚で鍵をかけている・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「何で閉められるのかしら」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「ちょっと！？　今、鍵をかけましたよね！？」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「可愛いボクは虫さんにも大人気ですからね！」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#3300FF">◆</font>わかさぎ姫</td>
+<td class="say normal">「すいません・・・条件反射で・・・」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say normal">「橘さんこんこんー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「よろしくねぇ&gt;ありす」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#3300FF">◆</font>わかさぎ姫</td>
+<td class="say normal">「鍵ｶﾁｬﾘ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say normal">「あーごめんねｗ　＜シベリアンさん」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#0066FF">◆</font>橘ありす</td>
+<td class="say normal">「こんばんは、よろしくお願いします。」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say weak">「ばうばう　おれ　わるいたぬきじゃないよ(ﾊﾞｳﾊﾞｳ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「まったく。外は虫も多いので早く中に入れてください」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#3300FF">◆</font>わかさぎ姫</td>
+<td class="say normal">「すいません、条件反射で・・・」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">橘ありす が村の集会場にやってきました</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say normal">「ちょっと！　なんで閉めるんですか！」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「PEじゃなくてBEなんだよぉ&gt;みく」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「うまい・・・！＞かえで」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say normal">「シペリアンさんこんこんー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#660033">◆</font>シベリアンタヌキ</td>
+<td class="say normal">「こんばんわぁ」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#CCFFCC">◆</font>高垣楓</td>
+<td class="say normal">「よろしベリアンハスキー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say normal">「輿水さん、高垣さんこんこんー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#3300FF">◆</font>わかさぎ姫</td>
+<td class="say strong">「ﾋﾟｼｬｯ」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">シベリアンタヌキ が村の集会場にやってきました</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>輿水幸子</td>
+<td class="say strong">「可愛いボクが来てあげましたよ！（ｶﾞﾗｯ）」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">高垣楓 が村の集会場にやってきました</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">輿水幸子 が村の集会場にやってきました</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say normal">「夢見さん、博麗さんこんこんー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF0000">◆</font>博麗霊夢</td>
+<td class="say normal">「お邪魔するわよー。こんばんわ」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">博麗霊夢 が村の集会場にやってきました</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#3300FF">◆</font>わかさぎ姫</td>
+<td class="say normal">「よろしくおねがいしまーす」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#993300">◆</font>夢見りあむ</td>
+<td class="say normal">「あ、あ、よろしくおねがいします」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">夢見りあむ が村の集会場にやってきました</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#999999">◆</font>kariri</td>
+<td class="say ">「kariri さんが登録情報を変更しました。<br>村人の名前：kariri → わかさぎ姫<br>アイコン：No. 2 (暗灰) → No. 3249 (わかさぎ姫(ロスワ))」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#999999">◆</font>kariri</td>
+<td class="say normal">「こんばんわー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say normal">「灰kariさんこんこんー」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">kariri が村の集会場にやってきました</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say normal">「ピンクかりさんこんこんー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF9999">◆</font>kari</td>
+<td class="say normal">「こんばんは」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">kari が村の集会場にやってきました</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say normal">「テンプレとかは以上なんで、入る人はどうぞー」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#FF6666">◆</font>ゆっくりみく</td>
+<td class="say ">「ゆっくりみく さんが登録情報を変更しました。」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>GM</td>
+<td class="say ">「GM さんが登録情報を変更しました。<br>村人の名前：GM → ゆっくりみく<br>アイコン：No. 0 (身代わり君用) → No. 73 (前川みく01)」</td>
+</tr>
+<tr class="user-talk">
+<td class="user-name"><font color="#000000">◆</font>GM</td>
+<td class="say red">「□【この村のテンプレ】□<br>①『汝は人狼なりや？』に初めて参加する人は前川鯖左メニューの<br>【特徴と仕様】の『ゲームに参加するために必要な環境』～『FAQ (よくある質問と答え)』と<br>【ゲームのルール】の『ゲームに参加する上で重要なこと』～『ゲーム中に死亡すると』を<br>　★必ず読んでおいて下さい★ どうしても不安だったら初心者ＣＯしてもらっても大丈夫です<br>　※初心者ＣＯする場合はゲーム開始前の時間にお願いします<br>　　(ゲーム開始後だとどうやっても教える時間がないので厳しいです)<br><br>②占い師や狩人の能力実行は夜時間①(狼同士での会話ができる時間)の間で行って下さい<br>　夜時間②(狼同士で会話ができなくなる時間)になるまでには能力を実行して下さい<br>　※狼側に狩人の生存や占い師の有無が意図せず伝わってしまう可能性があるためです。<br><br>③人狼の噛み時間は夜時間②(狼同士で会話ができなくなる時間)に切り替わってから<br>　残り時間1:00までに噛みをお願いします。詰み状況(勝ち確)の場合のみ早噛みしてもおｋ<br><br>④役職のＣＯをされる方は(騙りも含めて)発言強く、場合によっては赤文字発言でお願いします<br><br>⑤占い理由と占い結果は分けても分けなくてもどちらでも大丈夫です(騙りも含めて)<br> 自身のやり易い形で貼り付けて発言して下さい<br><br>⑥ＲＰはしてもしなくてもどちらでもおｋです、モバマス以外の関係ないアイコンつかってもおｋ<br><br>⑦最終日やＰＰ回避目的での村人の狼ＣＯ等の村騙りは『ありです』<br><br>⑧投票は投票時間残り時間１：００になるまでに『絶対に投票をして下さい』<br>　マシントラブル時はＧＭから「延長」をしますが、基本１日一回のみです。<br>　※でないと、いつまで経っても画面が切り替わらずゲームが進まないので<br><br>⑨わっふる（名付け）必要な方は入村後に『Cast a spell on me!!』と発言をお願いします<br><br>⑩更新時間の５分前までには名前の変更をお願いします<br>　（アイコン変える人はアイコン変更も含めて）<br>　理由は誤入村の人がいた場合に間違えて蹴る可能性があることと<br>　更新時にすぐに更新時間を揃えて開始がしたいからです。<br>　※どうしてもギリギリ入村になってしまう方は入村後すぐに変更をして下さい<br><br>⑪質問や気になることがあれば『ゲーム開始前までにお願いします』<br><br>■【禁止、通報項目】<br>⑫【ゲーム開始前、進行中、終了後問わず他者を不快にさせる発言や暴言】<br>　　画面の向こう側にも人がいることを考えて発言をして下さい<br><br>⑬【モバマス村のアクセス禁止行為に準ずることは全面禁止です】具体的には<br>　　シスコピ、突然死、最終日ＰＰ回避以外での村人騙り、掛け持ちプレイ、早噛み<br>　　リア狂＆利敵行為、ログ破壊、携帯端末からのアクセス<br><br>⑭【システムを意図的に利用した真の証明】<br>　　狼側が早噛みをしたり、占いや狩人が能力実行時間ギリギリになって能力を使う等の行為は禁止<br><br>⑮【昼間に自分のメタ推理を話すことやギリギリの時間で噛むなどのメタを誘発させる行為禁止】<br>　　具体的に言うと『噛み遅かったから～～さん狼でしょ』等禁止<br><br>⑯【ゲーム開始後の昼時間(白い画面)に２行以上のＡＡを貼り付けるの禁止】<br>　　ＣＯが見辛くなったり発言を見落とすことになるので<br>　　また遺言でＡＡを使うのも禁止とさせて頂きます<br><br>⑰【ガラケーやスマホ等からゲームに参加するのは禁止です】<br>　　ガラケーやスマホから人狼というゲームを行うのは難しいため<br>　　ＰＣからゲームに参加をよろしくお願い致します」</td>
+</tr>
+<tr>
+<td class="system-user" colspan="2">村作成：2021/08/06 (Fri) 22:25:30</td>
+</tr>
+</tbody></table>
+
+</body>
