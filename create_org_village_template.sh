@@ -5,10 +5,11 @@ if [ $# != 1 ] ; then
 	exit 1
 fi
 
-mkdir -p org/$1
+mkdir -p sample/$1
 
+touch sample/$1/day1-beforegame.html
 for i in $( seq 1 10 ) ; do
-	touch org/$1/${i}d.txt
-	touch org/$1/${i}n.txt
+	touch sample/$1/day${i}.html
+	touch sample/$1/day${i}-night.html
 done
-touch org/$1/ep.txt
+touch sample/$1/dayX-aftergame.html
